@@ -33,11 +33,11 @@ body{
 
 .flex-container{
 	display: grid;
-	grid-template-columns: 2fr 5fr;
-	grid-template-rows: 60vh 30vh;
+	grid-template-columns: 2fr 20px 5fr;
+	grid-template-rows: 70vh 20vh;
 	grid-template-areas: 
-	"controlls img-holder"
-	"options img-holder";
+	"controlls . img-holder"
+	"options . img-holder";
 }
 
 
@@ -55,7 +55,11 @@ body{
 	grid-area: controlls;
 	display: flex;
 	flex-direction: column;
-	padding: 3em;
+	padding: 1em 0em 1em 0em;
+}
+
+.controlls > label{
+	padding: .5em;
 }
 
 .options{
@@ -72,5 +76,30 @@ body{
 }
 
 .img-holder .origin{
-	display: block;
+	display: none;
+}
+
+.flip{
+		-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+.options{
+	display: flex;
+	flex-direction: column;
+	padding: 3em;
+	border-style: dashed;
+	border-color: white;
+}
+
+.options input[name='picFile']{
+	align-self: flex-end;
+}
+
+#picFile{
+	align-self: flex-end;
 }
